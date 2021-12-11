@@ -3,11 +3,12 @@ import co.edu.uptc.logica.modelo.Comprador;
 import co.edu.uptc.logica.modelo.Equipos;
 import co.edu.uptc.persistencia.utilidades.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Runner {
     public static void main(String[] args) {
-        System.out.println("FUNCIONAL");
+        System.out.println("FUNCIONAL "+ LocalDate.now());
         Archivo ar = new Archivo();
 
         ArrayList<Equipos> equi = ar.leerCsvEquipos();
@@ -27,5 +28,8 @@ public class Runner {
         comprador.setEdad(27);
         comp.add(comprador);
         ar.escribirComprador(comp);
+        System.out.println("-----------------------------------------------------");
+        System.out.println("-----------------------------------------------------");
+        ar.leerCsvFactura();
     }
 }

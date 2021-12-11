@@ -2,11 +2,13 @@ package co.edu.uptc.persistencia.utilidades;
 
 import co.edu.uptc.logica.modelo.Comprador;
 import co.edu.uptc.logica.modelo.Equipos;
+import co.edu.uptc.logica.modelo.Factura;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Archivo {
@@ -63,6 +65,38 @@ public class Archivo {
             System.out.println(a);
         }
     return comprador;
+    }
+
+    public ArrayList<Factura> leerCsvFactura(){
+        ArrayList<Factura>factura = new ArrayList<>();
+        Path filePath = Paths.get("Archivos/DATOS_EQUIPOS.csv");
+
+        try {
+            BufferedReader br = Files.newBufferedReader(filePath);
+            String linea;
+            while ((linea = br.readLine()) != null){
+
+                String arr[] = linea.split(",");
+
+                Factura fac = new Factura();
+                fac.setId(Integer.parseInt(arr[0]));
+                fac.setDocumento(Integer.parseInt(arr[1]));
+                fac.setEdad(Integer.parseInt(arr[2]));
+                fac.setIdEquipo(arr[3]);
+                fac.setMarca(arr[4]);
+                fac.setReferencia(arr[5]);
+                fac.setFecha(LocalDate.parse(arr[6]));
+                fac.setValor(Double.parseDouble(arr[7]));
+                factura.add(fac);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        for(Factura a: factura){
+            System.out.println(a);
+        }
+        return factura;
+
     }
 
     public void escribirEquipos(ArrayList<Equipos> equipo){
