@@ -153,4 +153,30 @@ public class Archivo {
         }
 
     }
+
+    public void escribirFactura(ArrayList<Factura>facturas){
+        File archivo = new File("Archivos/DATOS_EQUIPOS.csv");
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+
+        try {
+            fichero = new FileWriter(archivo);
+            pw = new PrintWriter(fichero);
+            for(Factura a:facturas){
+                String linea = a.getId()+","+a.getDocumento()+","+a.getEdad()+","+a.getIdEquipo()+","+a.getMarca()+","+a.getReferencia()+","+a.getFecha()+","+a.getValor();
+                pw.println(linea);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if(fichero != null){
+                    fichero.close();
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
 }
