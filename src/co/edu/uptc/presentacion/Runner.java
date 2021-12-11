@@ -1,6 +1,7 @@
 package co.edu.uptc.presentacion;
 import co.edu.uptc.logica.modelo.Comprador;
 import co.edu.uptc.logica.modelo.Equipos;
+import co.edu.uptc.logica.modelo.Factura;
 import co.edu.uptc.persistencia.utilidades.*;
 
 import java.time.LocalDate;
@@ -30,6 +31,18 @@ public class Runner {
         ar.escribirComprador(comp);
         System.out.println("-----------------------------------------------------");
         System.out.println("-----------------------------------------------------");
-        ar.leerCsvFactura();
+        ArrayList<Factura> facturas = ar.leerCsvFactura();
+        Factura f = new Factura();
+        f.setId(1);
+        f.setDocumento(10075);
+        f.setEdad(22);
+        f.setIdEquipo("okj");
+        f.setMarca("moto");
+        f.setReferencia("ok");
+        f.setFecha(LocalDate.now());
+        f.setValor(30);
+        facturas.add(f);
+        ar.escribirFactura(facturas);
+
     }
 }
