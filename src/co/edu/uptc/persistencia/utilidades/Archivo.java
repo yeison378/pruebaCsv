@@ -34,9 +34,9 @@ public class Archivo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for(Equipos a: equipos){
+/*        for(Equipos a: equipos){
             System.out.println(a);
-        }
+        }*/
         return equipos;
     }
 
@@ -61,9 +61,9 @@ public class Archivo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for(Comprador a: comprador){
+  /*      for(Comprador a: comprador){
             System.out.println(a);
-        }
+        }*/
     return comprador;
     }
 
@@ -92,9 +92,9 @@ public class Archivo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for(Factura a: factura){
+/*        for(Factura a: factura){
             System.out.println(a);
-        }
+        }*/
         return factura;
 
     }

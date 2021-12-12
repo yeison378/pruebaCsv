@@ -1,4 +1,5 @@
 package co.edu.uptc.presentacion;
+import co.edu.uptc.logica.control.DaoControl;
 import co.edu.uptc.logica.modelo.Comprador;
 import co.edu.uptc.logica.modelo.Equipos;
 import co.edu.uptc.logica.modelo.Factura;
@@ -10,6 +11,14 @@ import java.util.ArrayList;
 public class Runner {
     public static void main(String[] args) {
         System.out.println("FUNCIONAL "+ LocalDate.now());
+    Consola consola = new Consola();
+    consola.menu();
+    /*    DaoControl a = new DaoControl();
+        System.out.println(a.buscarComprador(0));
+        System.out.println(a.buscarEquipos(6));
+        System.out.println(a.comprar(1,1));*/
+
+/*
         Archivo ar = new Archivo();
 
         ArrayList<Equipos> equi = ar.leerCsvEquipos();
@@ -43,6 +52,7 @@ public class Runner {
         f.setValor(30);
         facturas.add(f);
         ar.escribirFactura(facturas);
+*/
 
     }
 }

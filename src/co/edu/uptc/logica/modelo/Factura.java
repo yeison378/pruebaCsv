@@ -78,15 +78,19 @@ public class Factura {
 
     @Override
     public String toString() {
-        return "Factura{" +
-                "id=" + id +
-                ", documento=" + documento +
-                ", edad=" + edad +
-                ", idEquipo='" + idEquipo + '\'' +
-                ", marca='" + marca + '\'' +
-                ", referencia='" + referencia + '\'' +
-                ", fecha=" + fecha +
-                ", valor=" + valor +
-                '}';
+        String resultado = "";
+                     resultado  +="\n*********************************" ;
+                      resultado +="\n*             FACTURA           *" ;
+                     resultado  +="\n*********************************" ;
+                      resultado += "\nId: " + id ;
+                      resultado +="\nDocumento: " + documento ;
+                      resultado +="\nEdad: " + edad ;
+                      resultado +="\nIdEquipo: " + idEquipo;
+                      resultado += "\nMarca='" + marca ;
+                      resultado +="\nReferencia: " + referencia;
+                      resultado +="\nFecha: " + fecha ;
+                      resultado +="\nValor: " + valor;
+
+        return resultado;
     }
 }

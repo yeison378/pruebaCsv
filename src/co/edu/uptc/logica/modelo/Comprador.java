@@ -33,12 +33,12 @@ public class Comprador {
         Edad = edad;
     }
 
-    @Override
+/*    @Override
     public String toString() {
         return "Comprador{" +
                 "ID=" + ID +
                 ", Nombre='" + Nombre + '\'' +
                 ", Edad=" + Edad +
                 '}';
-    }
+    }*/
 }
