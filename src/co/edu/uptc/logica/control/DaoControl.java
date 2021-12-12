@@ -44,9 +44,9 @@ public class DaoControl {
         if( comprador==null && equipos == null ){
             return "No existe comprador con documento: "+idComprador+"\nNi equipo con id: "+idEquipo;
         }else if( comprador==null ){
-            return "No existe comprador con documento: "+idComprador;
+            return "        NO existe comprador con documento: "+idComprador;
         }else if( equipos==null ){
-            return "No esxiste equipo con id: "+idEquipo;
+            return "        NO esxiste equipo con id: "+idEquipo;
         }else{
             ArrayList<Factura> facturas = archivo.leerCsvFactura();
             Factura f = new Factura();
@@ -65,5 +65,9 @@ public class DaoControl {
             return salida;
         }
 
+    }
+
+    public int tamagno(){
+        return archivo.leerCsvFactura().size();
     }
 }
